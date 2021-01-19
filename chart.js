@@ -78,7 +78,7 @@ function buildCharts(sample) {
 
     // 8. Create the trace for the bar chart. 
     var barData = [{
-      x:sampleValues(0,10),
+      x:xdata,
       y:yticks,
     }
     ];
