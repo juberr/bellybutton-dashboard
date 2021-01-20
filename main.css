@@ -1,0 +1,11 @@
+@media only screen and (min-width:992px) {
+    .navbar-fixed-top {
+        display: none;
+    }
+}
+
+.jumbotron {
+    background-image: url("https://i.pinimg.com/originals/69/2b/37/692b377f8b3c6e1362d4fd11d36f0c78.jpg");
+    color: white;
+    background-repeat: no-repeat;
+}

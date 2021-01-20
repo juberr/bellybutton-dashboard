@@ -92,8 +92,10 @@ function buildCharts(sample) {
     let barLayout = {
       title: "Top 10 Bacteria Culture Found"
     };
+
+    let barConfig = {responsive: true}
     // 10. Use Plotly to plot the data with the layout. 
-      Plotly.newPlot("bar", barData, barLayout);
+      Plotly.newPlot("bar", barData, barLayout, barConfig);
 
     //Bubble Chart
 
@@ -103,7 +105,7 @@ function buildCharts(sample) {
       text: otuLabels,
       type: "bubble",
       mode: "markers",
-      marker: {size: sampleValues, color: otuIds, colorscale:'Portland',}
+      marker: {size: sampleValues, color: otuIds, colorscale:'Portland',},
       
     }
     ];
@@ -112,11 +114,14 @@ function buildCharts(sample) {
     var bubbleLayout = {
       title: "Bacteria Cultures Per Sample",
       xaxis: {title: "OTU ID"},
-      hovermode: "closest"
+      hovermode: "closest",
+      
     };
 
+    var bubbleConfig = {responsive: true}
+
     // 3. Use Plotly to plot the data with the layout.
-      Plotly.newPlot("bubble", bubbleData, bubbleLayout)
+      Plotly.newPlot("bubble", bubbleData, bubbleLayout, bubbleConfig)
 
     // D2: 3. Use Plotly to plot the data with the layout.
    
@@ -140,13 +145,17 @@ function buildCharts(sample) {
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
-      width: 500,
-      height: 400,
-      title: "Belly Button Washing Frequency",
+      //width: 500,
+      //height: 400,
+      gauge: {autotick: false},
+      title: "Weekly Belly Button Washing Frequency",
     };
 
+    let gaugeConfig = {responsive: true}
+
+
     // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot("gauge", gaugeData, gaugeLayout)
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout, gaugeConfig)
   });
 
 }
